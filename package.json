@@ -1,6 +1,6 @@
 {
-  "name": "string-utils",
-  "version": "1.0.0",
+  "name": "string-utilsmns",
+  "version": "1.0.1",
   "description": "Get the string utility functions to reduce rewriting code",
   "keywords": [
     "stringutils"
