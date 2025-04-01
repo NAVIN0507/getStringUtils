@@ -24,5 +24,10 @@ function getRandomString(length){
     return string;
 }
 
+const HelloWorld = ()=>{
+  return(
+    <h1>Hello world</h1>
+  )
+}
 
-module.exports = [getInitials , getRandomString]
+module.exports = {getInitials , getRandomString , HelloWorld}
