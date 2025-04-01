@@ -1,0 +1,23 @@
+{
+  "name": "string-utils",
+  "version": "1.0.0",
+  "description": "Get the string utility functions to reduce rewriting code",
+  "keywords": [
+    "stringutils"
+  ],
+  "homepage": "https://github.com/NAVIN0507/getStringUtils#readme",
+  "bugs": {
+    "url": "https://github.com/NAVIN0507/getStringUtils/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NAVIN0507/getStringUtils.git"
+  },
+  "license": "ISC",
+  "author": "navin mns",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
