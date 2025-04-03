@@ -51,7 +51,21 @@ function removeWhitespace(str) {
   //Hello World --> HelloWorld
   return str.replace(/\s+/g, "");
 }
-
+//Convert String to Title Case
+function toTitleCase(str) {
+  return str.replace(
+    /\w\S*/g,
+    (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+  );
+}
+//Generate a Slug from a String
+function toSlug(str) {
+  return str
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]/g, "");
+}
 module.exports = {
   getInitials , 
   getRandomString , 
@@ -59,5 +73,8 @@ module.exports = {
   toSnakeCase,
   toPascalCase,
   truncateString,
-  removeWhitespace
+  removeWhitespace,
+  toTitleCase,
+  toSlug
+
 }
