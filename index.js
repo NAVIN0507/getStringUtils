@@ -2,6 +2,7 @@
  * Returns the first 'length' characters of the given word.
  * @param {string} word - The input word.
  * @param {number} length - The number of characters to extract.
+ * @param {string} str
  * @returns {string} - The extracted initials.
  */
 function getInitials(word, length) {
@@ -24,10 +25,8 @@ function getRandomString(length){
     return string;
 }
 
-const HelloWorld = ()=>{
-  return(
-    <h1>Hello world</h1>
-  )
+function toKebaCase(str){
+  return str.replace(/\s+/g, "-").toLowerCase();
 }
 
-module.exports = {getInitials , getRandomString , HelloWorld}
+module.exports = {getInitials , getRandomString , toKebaCase}
