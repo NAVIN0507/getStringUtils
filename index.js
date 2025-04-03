@@ -1,17 +1,17 @@
 /**
- * Returns the first 'length' characters of the given word.
- * @param {string} word - The input word.
- * @param {number} length - The number of characters to extract.
+ * 
+ * @param {string} word 
+ * @param {number} length 
  * @param {string} str
- * @returns {string} - The extracted initials.
+ * @returns {string} 
  */
 function getInitials(word, length) {
   return word
-    .split(/\s+/) // Split by any whitespace (spaces, tabs, newlines)
-    .filter((part) => part.length > 0) // Remove empty parts
-    .map((part) => part[0].toUpperCase()) // Get first letter & uppercase
-    .join("") // Combine initials
-    .slice(0, length); // Take the first 'length' characters
+    .split(/\s+/) 
+    .filter((part) => part.length > 0) 
+    .map((part) => part[0].toUpperCase()) 
+    .join("") 
+    .slice(0, length); 
 }
 
 function getRandomString(length){
