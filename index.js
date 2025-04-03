@@ -70,6 +70,19 @@ function toSlug(str) {
  function maskString(str, visibleCount = 4, maskChar = "*") {
   return maskChar.repeat(str.length - visibleCount) + str.slice(-visibleCount);
 }
+//Encode & Decode URL Components
+export function handleURL(str, type = "encode") {
+  return type === "encode" ? encodeURIComponent(str) : decodeURIComponent(str);
+}
+//Sanitize HTML (Prevent XSS)
+ function sanitizeHTML(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
 module.exports = {
   getInitials , 
   getRandomString , 
@@ -80,6 +93,7 @@ module.exports = {
   removeWhitespace,
   toTitleCase,
   toSlug,
-  maskString
-
+  maskString,
+  handleURL,
+  sanitizeHTML
 }
