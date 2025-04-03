@@ -40,10 +40,24 @@ function toKebaCase(str){
     .replace(/\s+/g, "");
 }
 
+//Truncate String 
+function truncateString(str, length) { 
+  //Hello World 2 --> He..........
+  return str.length > length ? str.slice(0, length) + "..." : str;
+}
+
+//Remove White Space
+function removeWhitespace(str) {
+  //Hello World --> HelloWorld
+  return str.replace(/\s+/g, "");
+}
+
 module.exports = {
   getInitials , 
   getRandomString , 
   toKebaCase,
   toSnakeCase,
-  toPascalCase
+  toPascalCase,
+  truncateString,
+  removeWhitespace
 }
