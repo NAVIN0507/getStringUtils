@@ -71,7 +71,7 @@ function toSlug(str) {
   return maskChar.repeat(str.length - visibleCount) + str.slice(-visibleCount);
 }
 //Encode & Decode URL Components
-export function handleURL(str, type = "encode") {
+ function handleURL(str, type = "encode") {
   return type === "encode" ? encodeURIComponent(str) : decodeURIComponent(str);
 }
 //Sanitize HTML (Prevent XSS)
