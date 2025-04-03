@@ -156,6 +156,30 @@ function normalizeURL(url) {
     : null;
 }
 //Detect if a String is a JSON
+ function isJSON(str) {
+  try {
+    JSON.parse(str);
+    return true;
+  } catch {
+    return false;
+  }
+}
+//Add Ordinal Suffix to a Number
+ function addOrdinalSuffix(num) {
+  const suffixes = ["th", "st", "nd", "rd"];
+  const v = num % 100;
+  return num + (suffixes[(v - 20) % 10] || suffixes[v] || suffixes[0]);
+}
+//Convert Markdown to HTML (Basic)
+ function markdownToHTML(markdown) {
+  return markdown
+    .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>") // Bold
+    .replace(/\*(.*?)\*/g, "<i>$1</i>") // Italics
+    .replace(/__(.*?)__/g, "<b>$1</b>") // Bold (alternative)
+    .replace(/_(.*?)_/g, "<i>$1</i>") // Italics (alternative)
+    .replace(/`(.*?)`/g, "<code>$1</code>"); // Inline code
+}
+
 module.exports = {
   getInitials , 
   getRandomString , 
@@ -181,5 +205,7 @@ module.exports = {
   getMetaTagContent,
   rgbToHex,
   hexToRgb,
-  
+  isJSON,
+addOrdinalSuffix,
+markdownToHTML
 }
