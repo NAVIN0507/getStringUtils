@@ -29,4 +29,21 @@ function toKebaCase(str){
   return str.replace(/\s+/g, "-").toLowerCase();
 }
 
-module.exports = {getInitials , getRandomString , toKebaCase}
+//Convert the String into Snake case
+ function toSnakeCase(str) { //Hello world --> Hello_world
+  return str.replace(/\s+/g, "_").toLowerCase();
+}
+//Convert the String into Pascal Case
+ function toPascalCase(str) { //helloworld --> HelloWorld
+  return str 
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, (word) => word.toUpperCase())
+    .replace(/\s+/g, "");
+}
+
+module.exports = {
+  getInitials , 
+  getRandomString , 
+  toKebaCase,
+  toSnakeCase,
+  toPascalCase
+}
