@@ -95,6 +95,34 @@ export function handleURL(str, type = "encode") {
  function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
+//Convert Query String to Object ✅
+ function parseQueryString(query) {
+  return Object.fromEntries(new URLSearchParams(query));
+}
+//Convert Object to Query String
+ function toQueryString(params) {
+  return new URLSearchParams(params).toString();
+}
+//Strip HTML Tags
+ function stripHTML(str) {
+  return str.replace(/<[^>]*>?/gm, "");
+}
+//Check if String is a Valid URL
+ function isValidURL(str) {
+  try {
+    new URL(str);
+    return true;
+  } catch {
+    return false;
+  }
+}
+// Normalize URL (Ensure HTTP/HTTPS)
+function normalizeURL(url) {
+  if (!/^https?:\/\//i.test(url)) {
+    return `https://${url}`;
+  }
+  return url;
+}
 module.exports = {
   getInitials , 
   getRandomString , 
@@ -109,5 +137,10 @@ module.exports = {
   handleURL,
   sanitizeHTML,
   getDomain,
-  isValidEmail
+  isValidEmail,
+  parseQueryString,
+  toQueryString,
+  stripHTML,
+  isValidURL,
+  normalizeURL
 }
