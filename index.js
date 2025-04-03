@@ -83,6 +83,18 @@ export function handleURL(str, type = "encode") {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
+//Extract Domain from URL
+ function getDomain(url) {
+  try {
+    return new URL(url).hostname;
+  } catch {
+    return null;
+  }
+}
+//Validate Email Format
+ function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
 module.exports = {
   getInitials , 
   getRandomString , 
@@ -95,5 +107,7 @@ module.exports = {
   toSlug,
   maskString,
   handleURL,
-  sanitizeHTML
+  sanitizeHTML,
+  getDomain,
+  isValidEmail
 }
