@@ -66,6 +66,10 @@ function toSlug(str) {
     .replace(/\s+/g, "-")
     .replace(/[^\w-]/g, "");
 }
+//Mask a String (e.g., Credit Card, Email)
+ function maskString(str, visibleCount = 4, maskChar = "*") {
+  return maskChar.repeat(str.length - visibleCount) + str.slice(-visibleCount);
+}
 module.exports = {
   getInitials , 
   getRandomString , 
@@ -75,6 +79,7 @@ module.exports = {
   truncateString,
   removeWhitespace,
   toTitleCase,
-  toSlug
+  toSlug,
+  maskString
 
 }
