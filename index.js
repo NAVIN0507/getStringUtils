@@ -123,6 +123,39 @@ function normalizeURL(url) {
   }
   return url;
 }
+//Obfuscate Email (For Privacy Protection)
+ function obfuscateEmail(email) {
+  return email.replace(/(.)(?=.*@)/g, "*");
+}
+//Generate Random Hex Color
+ function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+
+// Extract Meta Tags from HTML
+ function getMetaTagContent(html, metaName) {
+  const regex = new RegExp(
+    `<meta[^>]+name=["']${metaName}["'][^>]+content=["']([^"']+)["']`,
+    "i"
+  );
+  const match = html.match(regex);
+  return match ? match[1] : null;
+}
+//Convert RGB to HEX
+ function rgbToHex(r, g, b) {
+  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+}
+//Convert HEX to RGB
+ function hexToRgb(hex) {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result
+    ? `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(
+        result[3],
+        16
+      )})`
+    : null;
+}
+//Detect if a String is a JSON
 module.exports = {
   getInitials , 
   getRandomString , 
@@ -142,5 +175,11 @@ module.exports = {
   toQueryString,
   stripHTML,
   isValidURL,
-  normalizeURL
+  normalizeURL,
+  obfuscateEmail,
+  getRandomHexColor,
+  getMetaTagContent,
+  rgbToHex,
+  hexToRgb,
+  
 }
